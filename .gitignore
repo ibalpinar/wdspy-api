@@ -131,3 +131,6 @@ dist
 
 #Macos things
 .DS_Store
+
+.idea
+.git
