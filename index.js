@@ -7,7 +7,7 @@ app.get('/', function (request, reply) {
     reply.send("Our first route");
 })
 // Start the server
-app.listen(3000, function (err, address) {
+app.listen({port: 3000}, (err, address) =>  {
     if (err) {
         console.error(err);
         process.exit(1);
