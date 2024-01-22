@@ -1,16 +1,22 @@
-// index.js
-// Import the fastify framework
-const fastify = require('fastify')
-const app = fastify()
-// Set a GET route "/"
+/**
+ * /api/users GET: Returns all users in the datastore.
+ * /api/users/:userId GET: Returns a specific user.
+ * /api/users POST: Adds a new user.
+ * /api/users/:userId PUT: Edits a user.
+ * /api/users/:userId DELETE: Removes a user.
+*/
+
+const fastify = require('fastify');
+const app = fastify();
+
 app.get('/', function (request, reply) {
-    reply.send("Our first route")
+    reply.send("Our first route...");
 })
-// Start the server
-app.listen(3000, function (err, address) {
+
+app.listen({port: 3000}, (err, address) =>  {
     if (err) {
-        console.error(err)
-        process.exit(1)
+        console.error(err);
+        process.exit(1);
     }
-    console.log(`Server listening on ${address}`)
-})
+    console.log(`Server listening on ${address}`);
+});
